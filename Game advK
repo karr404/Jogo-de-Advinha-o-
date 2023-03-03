@@ -1,0 +1,50 @@
+#include <stdio.h>
+#define NUMERO_DE_TENTATIVAS 3
+
+int main(){
+    int numsecreto=5;
+    int num; 
+    printf("*********************************");
+    printf("\n*Bem vindo ao jogo de advinhacao*");
+    printf("\n*********************************");
+
+    printf("\nDigite um numero de 1 a 10!");
+// pedindo ao usuário um numero
+for(int i=1; i<=NUMERO_DE_TENTATIVAS; i++){
+    
+    printf("\nTentativa: %d de 3\n",i ,NUMERO_DE_TENTATIVAS);
+    printf("\nDigite um numero:");
+    scanf("%d", &num);
+
+   //validando tentativas...
+        if(num<0){
+            printf("Tentativa invalida, o numero nao pode ser negativo!");
+            i--; 
+        }
+        int acertou= (num==numsecreto);
+        
+        if(acertou){
+            printf("Voce acertou!");
+            printf("\nPARABENS!! VOCE EH UM OTIMO JOGADOR <3");
+            break;
+
+        }else{
+            if (num > numsecreto)
+            {
+            printf("Seu chute foi  maior que o numero secreto!");
+            printf("\ntente novamente!");
+            }
+            if (num < numsecreto)
+            {
+                printf("Seu chute foi menor q o numero secreto!");
+                printf("\nTente novamente!");
+            }
+             if (i>=3){
+            printf("\nVoce perdeu! Mas foi um prazer jogar com voce <3\n");
+            printf("\nFIM DE JOGO :)");
+            }
+        
+        }
+ 
+    }
+}
